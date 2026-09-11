@@ -3,7 +3,7 @@ import { assets } from "../assets/assets";
 import { PlayerContext } from "../context/PlayerContext";
 
 const Player = () => {
-  const { track, seekBar, seekBg, playStatus, play, pause, time } =
+  const { track, seekBar, seekBg, playStatus, play, pause, time, previous, next } =
     useContext(PlayerContext);
 
   return (
@@ -25,6 +25,7 @@ const Player = () => {
           />
 
           <img
+            onClick={previous}
             className="w-4 cursor-pointer"
             src={assets.prev_icon}
             alt=""
@@ -47,6 +48,7 @@ const Player = () => {
           )}
 
           <img
+            onClick={next}
             className="w-4 cursor-pointer"
             src={assets.next_icon}
             alt=""
